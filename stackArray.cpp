@@ -6,21 +6,21 @@ class StackArrayImpl{
     private:
         int size;
         int *stackArr;
-        int top;
-        void resize(){
-            int tempSize = size * 2;
+        int top; //poisition of top of stack
+        void resize(){ //incase our stack becomes full
+            int tempSize = size * 2; 
             int *temp = new int[tempSize];
             for(int i = 0; i < size;i++)
-                temp[i] = stackArr[i];
-            delete [] stackArr;
-            stackArr = temp;
-            size = tempSize;
+                temp[i] = stackArr[i]; //copy old array elements to new array
+            delete [] stackArr; //delete old array
+            stackArr = temp; //set old array variable to new array
+            size = tempSize; //size will be new size
         }
     public:
         StackArrayImpl(int size){
             this->size = size;
             stackArr = new int[size];
-            top = -1;
+            top = -1; //at the bottom
         }
 
         ~StackArrayImpl(){
@@ -31,16 +31,15 @@ class StackArrayImpl{
             //if stack is full, resize array
             if(top == size - 1)
                 resize();
-            // add data to the top of the stack
-            stackArr[++top] = data;
+            stackArr[++top] = data; //top changes from 0 to 1 and then adds data
         }
-        // pop data of the stack
-        int pop(){
+
+        int pop(){ //in stack pop does not actually delete, it overrides old data that was popped, if push() is used
             // if stack is empty, nothing to pop
             if(top == -1)
                 return -1;
             // remove and return data from the top of the stack
-            return stackArr[top--];
+            return stackArr[top--]; //after printing comes down to the new last element in the stack
         }
 
 };

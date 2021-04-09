@@ -31,7 +31,7 @@ class LinkedList{
         ~LinkedList(){
             Node *next;
             // keep going until header != NULL
-            while(header != NULL){
+            while(header != NULL){ 
                 // advance to pointer to point to next node
                 next = header->next;
                 // delete node that header is pointing to
@@ -54,7 +54,7 @@ class LinkedList{
             }
             else{
                 tail->next = n; //Tail's node's pointer will point to n
-                tail = n; //tail will now point to new appended las node
+                tail = n; //tail will now point to new appended last node
             }
             size++;
         }
@@ -166,12 +166,12 @@ class LinkedList{
             }
         }
 
-        void toString(){ //printing the list
+        void PrintList(){ //printing the list
 
-            Node *n = header; // create temp pointer which points to what header is pointing to
-            while(n != NULL){
-                cout<<n->data<< " "; // print data part of node
-                n = n->next; 
+            Node *temp = header; // create temp pointer which points to what header is pointing to
+            while(temp != NULL){
+                cout<<temp->data<< " "; // print data part of node
+                temp = temp->next; 
             }
             cout << endl;
         }
@@ -190,5 +190,5 @@ int main(){
     list.removeAt(2);
     list.removeFirst();
     cout<<"The linked list is: ";
-    list.toString();
+    list.PrintList();
 }
