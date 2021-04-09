@@ -1,2 +1,2 @@
 # Data-structures-using-CPP
-# Data structures and algorithms using C plus plus
+# Linked List, Doubly Linked List, Queue using Array, Queue using Linked List, Stack using Array, Stack using Linked List, Binary Search Tree, Binary Min/MAx Heap
